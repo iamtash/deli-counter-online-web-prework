@@ -1,17 +1,21 @@
+require "pry"
 #katz_deli = []
+
 
 def line(katz_deli)
   if katz_deli.length == 0
     puts "The line is currently empty."
   else
-    current_line = ""
-    place_in_line = 1
-    katz_deli.each do |name|
-      current_line << place_in_line.to_s + ". " + name + " "
+    #current_line = ""
+    place_in_line = 0
+    current_line = katz_deli.map do |name|
       place_in_line += 1
+      place_in_line.to_s + ". " + name
+
     end
-    current_line = current_line[0...-1]
-    puts "The line is currently: #{current_line}"
+    #binding.pry
+    #current_line = current_line[0...-1]
+    puts "The line is currently: #{current_line.join(" ")}"
   end
 end
 
